@@ -1,0 +1,7 @@
+﻿@model PalindromeFormModel
+
+<form asp-controller="Demo" asp-action="EvaluatePalindrome" method="post" enctype="multipart/form-data">
+    <label asp-for="EnteredValue">Please Enter a Positive Number</label>
+    <input asp-for="EnteredValue" />
+    <button type="submit">Submit</button>
+</form>

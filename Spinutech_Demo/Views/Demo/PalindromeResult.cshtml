@@ -1,0 +1,32 @@
+﻿@model PalindromeResultModel
+
+@{
+    ViewData["Title"] = "Palindrome Result";
+    Layout = "_Layout";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Palindrome Result</h1>
+    <br />
+    @if (Model.isValid == false)
+    {
+        <h2>@(String.IsNullOrWhiteSpace(Model.originalNumber) ? "Please enter a valid number" : Model.originalNumber + " is not a value that could not be evaluated.")</h2>
+    }
+    else
+    {
+        <h2>@(String.IsNullOrWhiteSpace(Model.numberAsText) ? Model.originalNumber : Model.numberAsText) @(Model.isPalindrome == false ? "is NOT" : "IS") a palindrome.</h2>
+        <br />
+        <br />
+        <p>The original and reversed values are @(Model.isPalindrome == false ? "not" : "") the same: <b>@Model.originalNumber</b> | <b>@Model.reversedNumber</b></p>
+    }
+
+    <br/>
+    <br/>
+    <hr/>
+    <br />
+    <br />
+    <h3>Would you like to try another?</h3>
+    <br/>
+    @Html.Partial("~/Views/Demo/_DemoForm.cshtml", new PalindromeFormModel())
+
+</div>

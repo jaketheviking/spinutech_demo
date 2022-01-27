@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Enter a number to see if it's a palindrome</h1>
+    <br/>
+    @Html.Partial("~/Views/Demo/_DemoForm.cshtml", new PalindromeFormModel())
+</div>
